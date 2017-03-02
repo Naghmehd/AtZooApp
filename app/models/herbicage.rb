@@ -1,0 +1,2 @@
+class Herbicage < Cage
+end

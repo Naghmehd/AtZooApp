@@ -1,0 +1,2 @@
+class Carnicage < Cage
+end
