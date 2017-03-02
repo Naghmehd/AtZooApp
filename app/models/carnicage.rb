@@ -1,2 +1,0 @@
-class Carnicage < Cage
-end
