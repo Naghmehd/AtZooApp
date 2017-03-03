@@ -1,0 +1,47 @@
+require 'test_helper'
+
+class ZooKeeperTest < ActiveSupport::TestCase
+  describe 'adding an animal to' do
+    let(:subject) { ZooKeeper.new }
+
+    describe 'carnivore cage' do
+      let(:cage)    { cages(:carnivore_cage) }
+      let(:tiger)   { animals(:tiger) }
+      let(:cow)     { animals(:cow) }
+      let(:swiggly) { animals(:swiggly) }
+      let(:baboon)  { animals(:baboon) }
+
+      it 'accepts a carnivore animal' do
+        assert subject.(cage, tiger)
+        assert_equal tiger.cage_id, cage.id
+
+        animals = cage.animals
+        assert_includes animals, tiger
+      end
+
+      it 'rejects an herbivore animal' do
+        assert_not subject.(cage, cow)
+        assert_not_equal cow.cage_id, cage.id
+
+        animals = cage.animals
+        assert_not_includes animals, cow
+      end
+
+      it 'rejects an omnivore animal' do
+        assert_not subject.(cage, baboon)
+        assert_not_equal baboon.cage_id, cage.id
+
+        animals = cage.animals
+        assert_not_includes animals, baboon
+      end
+
+      it 'rejects an unknown animal' do
+        assert_not subject.(cage, swiggly)
+        assert_not_equal swiggly.cage_id, cage.id
+
+        animals = cage.animals
+        assert_not_includes animals, swiggly
+      end
+    end
+  end
+end

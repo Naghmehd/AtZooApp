@@ -4,8 +4,30 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+tiger:
+  species: tiger
+  group:   carnivore
+
+lion:
+  species: lion
+  group:   carnivore
+
+wolf:
+  species: wolf
+  group:   carnivore
+
+chicken:
+  species: chicken
+  group:   herbivore
+
+cow:
+  species: cow
+  group:   herbivore
+
+swiggly:
+  species: swiggly
+  group:
+
+baboon:
+  species: baboon
+  group:   omnivore
