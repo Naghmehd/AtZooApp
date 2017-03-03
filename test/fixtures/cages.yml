@@ -6,3 +6,12 @@
 #
 carnivore_cage:
   group: carnivore
+  zoo:   :zoo
+
+herbivore_cage:
+  group: herbivore
+  zoo:   :zoo
+
+omnivore_cage:
+  group: omnivore
+  zoo:   :zoo
