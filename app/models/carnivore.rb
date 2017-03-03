@@ -1,3 +1,0 @@
-class Carnivore < Animal
-  
-end

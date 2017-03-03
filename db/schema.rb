@@ -13,15 +13,14 @@
 ActiveRecord::Schema.define(version: 20170302201043) do
 
   create_table "animals", force: :cascade do |t|
-    t.string   "name"
-    t.string   "animal_type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "species"
+    t.string   "group"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cages", force: :cascade do |t|
-    t.string   "name"
-    t.string   "cage_type"
+    t.string   "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
