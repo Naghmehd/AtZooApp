@@ -10,19 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302201043) do
+ActiveRecord::Schema.define(version: 20170303210925) do
 
   create_table "animals", force: :cascade do |t|
     t.string   "species"
     t.string   "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "cage_id"
+    t.index ["cage_id"], name: "index_animals_on_cage_id"
   end
 
   create_table "cages", force: :cascade do |t|
     t.string   "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "zoo_id"
+    t.index ["zoo_id"], name: "index_cages_on_zoo_id"
   end
 
   create_table "zoos", force: :cascade do |t|
