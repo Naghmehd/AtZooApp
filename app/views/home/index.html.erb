@@ -1,0 +1,27 @@
+<h1>Welcome to Zoo!</h1>
+
+<% @cages.each do |cage| %>
+  <div>
+    <h2><%= cage.group.titleize %></h2>
+    <ul>
+    <% cage.animals.each do |animal| %>
+      <li>
+        <%= animal.species.titleize %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h2>Hoding cell</h2>
+<ul>
+<% @free_animals.each do |animal| %>
+  <li>
+    <%= animal.species.titleize %>
+  <% end %>
+  </li>
+</ul>
+
+All animals in a cage? <%= @free_animals.count == 0 %>
+
+<%= button_to 'Cage them up!', round_them_up_path %>
